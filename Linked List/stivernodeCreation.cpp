@@ -1,49 +1,49 @@
-#include <iostream>
+#include<iostream>
 using namespace std;
 
 struct Node{
-    int data;
-    Node* next;
+  int data;
+  Node* next;
 };
 
-void insertNode(Node*& head, int data){
+void insert(Node*& head, int data){
     Node* newNode = new Node();
-    newNode->data = data;
+    newNode->data=data;
     newNode->next = nullptr;
-
-    if(head == nullptr){
+    
+    
+    if(head==nullptr){
         head = newNode;
-    }else{
+    }
+    else{
         Node* temp = head;
-        while(temp->next != nullptr){
-            temp = temp->next;  // Traverse to the last node
+        while(temp->next!=nullptr){
+            temp=temp->next;
         }
-        temp->next = newNode;
+    temp->next=newNode;
     }
 }
-
-void printlist(Node* head){
+void print(Node* head){
     Node* temp = head;
-    while(temp != nullptr){
-        cout<<temp->data<<"->";
-        temp = temp->next;
+    while(temp!= nullptr){
+        cout<<temp->data<<" ";
+        temp=temp->next;
     }
-    cout << endl;
 }
 
 int main(){
     Node* head = nullptr;
     int n;
-    cout<<"Enter the number: ";
-    cin >> n;
-
+    cout<<"Enter the no. of node: ";
+    cin>>n;
     int data;
-    cout<<"Enter the data: "; 
-    for(int i=0; i<n; i++){
-        cin >> data;
-        insertNode(head, data);
+    
+    for(int i = 0; i<=n+3 ; i++){
+        cin>>data;
+        insert(head,data);
     }
-    printlist(head);
-
-    return 0;
+    
+    print(head);
 }
+
+
